@@ -181,6 +181,28 @@ describe('Basic user flow for Website', () => {
     console.log('Checking number of items in cart on screen after reload...');
     // TODO: - Step 7
     // Reload the page once more, then go through each <product-item> to make sure that it has remembered nothing
+    await page.reload();
+    const prodItems = await page.$$('product-item');
+    
+    // element to make sure that all of their buttons say "add to Cart".
+    for(let i =0; i<prodItems.length;i++){
+      let shadowRoot = await prodItems[i].getProperty('shadowRoot');
+      let buton = await shadowRoot.$('button');
+      
+      let inerText= await buton.getProperty('innerText');
+      let jsonVal = await inerText.jsonValue();
+      
+      expect(jsonVal).toBe('Add to Cart');
+    }
+    // Also check to make sure that #cart-count is still 20
+    // Check to see if the innerText of #cart-count is 20
+    let count = await page.$('#cart-count');
+    let inerText= await count.getProperty('innerText');
+    let jsonVal = await inerText.jsonValue();
+    
+    // After adding all items to cart, expect the count to be 20, since theres only 20 availiable items
+    expect(jsonVal).toBe('0');
+
     // is in the cart - do this by checking the text on the buttons so that they should say "Add to Cart".
     // Also check to make sure that #cart-count is still 0
   }, 10000);
