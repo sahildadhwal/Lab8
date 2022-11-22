@@ -16,3 +16,10 @@
 
 
 
+**3) Would you use a unit test to test the “message” feature of a messaging application? Why or why not? For this question, assume the “message” feature allows a user to write and send a message to another user.**
+
+- No, unit test are not for this purpose. Unit test should be more local and small scale. I would think that we use end to end testing for this, but I am not too certain.
+
+**4) Would you use a unit test to test the “max message length” feature of a messaging application? Why or why not? For this question, assume the “max message length” feature prevents the user from typing more than 80 characters.**
+
+- Yes, we would use a unit test to test the max message length. I think that we would because unit test are meant to be small scale and this seems to be small scale because all we are doing is seeing if the length of a string message is 80 characters. That seems to be a simple unit test.
