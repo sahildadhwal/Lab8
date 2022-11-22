@@ -30,13 +30,12 @@
 
 - Yes, we would use a unit test to test the max message length. I think that we would because unit test are meant to be small scale and this seems to be small scale because all we are doing is seeing if the length of a string message is 80 characters. That seems to be a simple unit test.
 
-
-![Alt text](1)%20npm%20run%20test.png)
-
-<br>
-
-![Alt text](2)%20sum%20test%20js.png)
+![Alt text](img%20run%20test.png)
 
 <br>
 
-![Alt text](3)%20unit%20test%20js.png)
+![Alt text](img%20sum%20test%20js.png)
+
+<br>
+
+![Alt text](img%20unit%20test%20js.png)
